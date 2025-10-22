@@ -1,0 +1,9 @@
+
+print('dobre doshyl v ne moga da opravq smetkata')
+a = float(input('kolko smekta navyrtq'))
+b = int(input('a kolko shte ostavish na servitorq? 10,12 ili 15 procenta?'))
+c = int(input('kolko choveka plashtat'))
+smekta_s_baksh = b/100*a + a
+smekta_s_baksh_na_chovek = smekta_s_baksh/c
+round(smekta_s_baksh_na_chovek,2)
+print(f'vseki shte plati po {smekta_s_baksh_na_chovek}')
