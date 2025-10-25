@@ -1,0 +1,13 @@
+# print('dobre doshyl v dobrich')
+# height = int(input('kolko si visok moika'))
+# if height >= 130:
+#     print('minavash moika')
+# else:
+#     print('v dorbirch sme samo golemi . dyrpai')
+    
+dadeno_chislo  = int(input('kaji chislo maina'))
+kakvo_e_chisloto = dadeno_chislo % 2
+if kakvo_e_chisloto == 0 :
+    print('çhetno e majna')
+else:
+    print('nechetno e maina')
