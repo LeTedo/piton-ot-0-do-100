@@ -1,0 +1,21 @@
+from os import system
+bidding = True 
+bidding_manager = {}
+while bidding != False :
+    name = input('kak se kazvash\n')
+    bid = int(input('kakva suma zalagash\n'))
+    bidding_manager[name]=bid
+    q = input('shte ima li drugi uchstinici? "da" ili "ne"').lower().split()
+    if q == 'da':
+        system('cls')
+        bidding=True
+    else:
+        list_of_bids=[]
+        for bidder in bidding_manager:
+            bidder_amount = bidding_manager[name]
+            list_of_bids.append(bidder_amount)
+            print(f'pobeditelqt e uchastnikyt sys suma : {max(list_of_bids)}')
+            break
+
+    
+ 

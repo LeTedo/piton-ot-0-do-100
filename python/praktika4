@@ -1,0 +1,35 @@
+#upr1
+# chisla = [119,112,118,114,117,116,115,111,113]
+# nai_golqmo_chislo = 0
+# for chislo in chisla:
+#     if chislo > nai_golqmo_chislo:
+#         nai_golqmo_chislo = chislo
+# print(nai_golqmo_chislo)
+#upr2
+# sum = 0
+# for number in range(1, 101):
+#     sum += number
+#     print(sum)
+
+#upr3 parola generator
+import random
+letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+symbol = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+number= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+parola_list = []
+print('sega shte ti napravq parola')
+broi_bukvi = int(input('kolko bukvi iskash v  parolata\n'))
+broi_simvoli= int(input('kolko simvola iskash da sydyrja\n'))
+broi_chisla = int(input('a kolko chisla\n'))
+while broi_bukvi >0:
+    broi_bukvi -=1
+    parola_list += random.choice(letter)
+for simvoli in range(broi_simvoli):
+    parola_list += random.choice(symbol)
+for chisla in range(broi_chisla):
+    parola_list +=random.choice(number) 
+random.shuffle(parola_list)
+parola=''
+for prla in parola_list:
+    parola += prla
+print(parola)

@@ -1,0 +1,84 @@
+#upr1 za besenica mn me obyrka tva ne sym go pravil sam :(
+import random
+word_list = ['aardvark','baboon','camel']
+chosen_word = random.choice(word_list)
+print(chosen_word)
+correct_letter=[]
+game_over = False
+lives = 6
+hangman = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+print(hangman[0])
+while not game_over:
+    if lives == 0:
+        print('gubish')
+        break
+    display= ''
+    guess = input('poznai bukva').lower().strip()   
+    if guess in chosen_word and guess not in correct_letter:
+        correct_letter.append(guess)
+    elif guess in correct_letter:
+        print('veche pozna taq bukva')
+    else :
+        print(f'Bukvata koqto posochi {guess} q nqma v tyrsenata duma,-1 jivot')
+        print(hangman[1])
+        lives -= 1
+        hangman.pop(1)
+    for letter in chosen_word:
+        if letter in correct_letter:
+            display += letter
+        else:
+            display+='_'
+    if '_' not in display:
+        game_over=True
+        print(f'congrats. word is {chosen_word}')
+    else:
+        print(display)

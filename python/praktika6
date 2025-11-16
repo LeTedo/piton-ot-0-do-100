@@ -1,0 +1,56 @@
+#ime
+# def better_greet(name):
+#     print(f'zdr {name}')
+# better_greet('ivan')
+
+#godini
+# def life_in_weeks(age):
+#     years_remaining= 90 - age
+#     weeks_remaining=years_remaining*52
+#     print(f'You have {weeks_remaining} weeks left .')
+# life_in_weeks(20)
+
+# def greet_with(name,location):
+#     print(f'Hello {name}' ) 
+#     print(f'What is it like in {location}')
+# greet_with(name='ivan', location='dobrevo')
+
+
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+decoder=True 
+while decoder == True:
+    
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    
+    def ceaser(original_text,shift_amount,encode_or_decode):
+        cypher=''
+        if encode_or_decode == 'decode':
+                shift_amount*= -1
+        for char in original_text:
+            if char in alphabet:
+                position = alphabet.index(char)
+                shifted_position = (position + shift_amount)
+                shifted_position %= len(alphabet)
+                encoded_letter = alphabet[shifted_position]
+                cypher+=encoded_letter
+            else:
+                cypher+=char
+                
+        print(f'here is the {encode_or_decode}d result: {cypher}')
+    
+    ceaser(original_text=text, shift_amount=shift, encode_or_decode=direction)
+    q = input("do you want again 'yes' or 'no' ?\n ").lower()
+    if q == 'yes':
+        decoder = True
+    else: 
+        print('this is the end ') 
+        break 
+
+
+       
+        
+  

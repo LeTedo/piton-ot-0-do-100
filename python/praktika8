@@ -1,0 +1,41 @@
+def add(n1,n2):
+    return n1 + n2
+
+def substract(n1,n2):
+    return n1 - n2
+
+def multiply(n1,n2):
+    return n1 * n2
+
+def divide(n1,n2):
+    if n2==0 :
+        return 'ne delim na nula'
+    return n1 / n2
+
+calculator_dictionary = {'+':add,
+                         '-':substract,
+                         '*':multiply,
+                         '/':divide}
+
+def calculator():
+    first_number = float(input('izberi chislo\n'))
+    calculator_on = True 
+
+    while calculator_on != False:
+        
+        for symbol in calculator_dictionary:
+            print(symbol)
+        operation = input('kakvo deistvie shte izvyshish\n')
+        second_number = float(input('izberi vtoro chislo\n'))
+        answer= calculator_dictionary[operation](first_number,second_number)
+        print(answer)
+        more_calculation = input(f'shte pravish  li oshte  deistviq s tova chislo {answer} "da" ili "ne" ili s novi chisla "novi"').lower()
+        if more_calculation == 'da':
+            first_number = answer
+        elif more_calculation == 'novi':
+                calculator_on = False
+                calculator()
+        else:
+            calculator_on = False
+            print('chao')
+calculator()
